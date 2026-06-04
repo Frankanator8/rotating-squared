@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bgi1yr0n838pl"]
+
+[ext_resource type="PackedScene" uid="uid://btskb0s7a81wy" path="res://Scenes/ball.tscn" id="1_3vijo"]
+[ext_resource type="PackedScene" uid="uid://c0a1i02sao2v4" path="res://Scenes/wall.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cvm8v88feww0x" path="res://Scripts/camera.gd" id="2_7mycd"]
+[ext_resource type="Script" uid="uid://c8xc80ab23jyd" path="res://Scripts/walls.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bmtwn5fo3gcsf" path="res://Assets/back.png" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cmsxt4w27tsks" path="res://menu.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://d28ne4354uatg" path="res://Scenes/expander.tscn" id="7_272bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+resource_local_to_scene = true
+size = Vector2(1762.8922, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+resource_local_to_scene = true
+size = Vector2(616.9275, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+resource_local_to_scene = true
+size = Vector2(616.9275, 64)
+
+[node name="Node2D" type="Node2D" unique_id=1826810981]
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=178174515]
+unique_name_in_owner = true
+zoom = Vector2(0.33, 0.33)
+script = ExtResource("2_7mycd")
+
+[node name="ball1" parent="." unique_id=1798009355 instance=ExtResource("1_3vijo")]
+unique_name_in_owner = true
+position = Vector2(-1, 0)
+
+[node name="ball2" parent="." unique_id=537935712 instance=ExtResource("1_3vijo")]
+unique_name_in_owner = true
+position = Vector2(424, 1657)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="World" type="Node2D" parent="." unique_id=1534289784]
+unique_name_in_owner = true
+script = ExtResource("2_h2yge")
+ROTSPEED = 1.0
+
+[node name="Walls" type="Node2D" parent="World" unique_id=752025862]
+rotation = 0.057595864
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="wall" parent="World/Walls" unique_id=51137901 instance=ExtResource("2_0xm2m")]
+position = Vector2(-211, -10)
+rotation = 0.48515567
+
+[node name="TextureRect" parent="World/Walls/wall" index="0" unique_id=988948665]
+offset_left = -0.46634483
+offset_top = -0.8846054
+offset_right = 1762.4259
+offset_bottom = 63.115395
+
+[node name="CollisionShape2D" parent="World/Walls/wall" index="1" unique_id=533170504]
+position = Vector2(880.97974, 31.115395)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="wall3" parent="World/Walls" unique_id=1823012512 instance=ExtResource("2_0xm2m")]
+position = Vector2(2413.6956, 672.1726)
+rotation = -0.50173545
+scale = Vector2(-3.7125044, 1)
+
+[node name="TextureRect" parent="World/Walls/wall3" index="0" unique_id=988948665]
+offset_left = -0.46634483
+offset_top = -0.8846054
+offset_right = 616.4611
+offset_bottom = 63.115395
+
+[node name="CollisionShape2D" parent="World/Walls/wall3" index="1" unique_id=533170504]
+position = Vector2(307.9974, 31.115395)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="wall4" parent="World/Walls" unique_id=1971351801 instance=ExtResource("2_0xm2m")]
+position = Vector2(2408.1853, 663.47534)
+rotation = -0.025686612
+scale = Vector2(2.016084, 0.99999994)
+
+[node name="TextureRect" parent="World/Walls/wall4" index="0" unique_id=988948665]
+offset_left = -0.46634483
+offset_top = -0.8846054
+offset_right = 1722.0278
+offset_bottom = 63.115395
+
+[node name="CollisionShape2D" parent="World/Walls/wall4" index="1" unique_id=533170504]
+position = Vector2(860.7807, 31.115395)
+
+[node name="wall5" parent="World/Walls" unique_id=1974553864 instance=ExtResource("2_0xm2m")]
+position = Vector2(442.05145, 1829.5876)
+rotation = -2.0066383
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="TextureRect" parent="World/Walls/wall5" index="0" unique_id=988948665]
+offset_left = -0.46634483
+offset_top = -0.8846054
+offset_right = 616.4611
+offset_bottom = 63.115395
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" parent="World/Walls/wall5" index="1" unique_id=533170504]
+position = Vector2(307.9974, 31.115395)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Expander" parent="World" unique_id=1890306403 instance=ExtResource("7_272bh")]
+position = Vector2(842, 494)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=877621778]
+visible = false
+z_index = -1
+offset_left = -81268.0
+offset_top = -57157.008
+offset_right = -75844.0
+offset_bottom = -53330.008
+scale = Vector2(30.687784, 30.708979)
+texture = ExtResource("4_1bvp3")
+stretch_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=180182548]
+visible = false
+
+[node name="menu" parent="CanvasLayer" unique_id=884898043 instance=ExtResource("5_lquwl")]
+metadata/_edit_use_anchors_ = true
+
+[editable path="World/Walls/wall"]
+[editable path="World/Walls/wall3"]
+[editable path="World/Walls/wall4"]
+[editable path="World/Walls/wall5"]
