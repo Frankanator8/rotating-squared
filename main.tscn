@@ -651,6 +651,16 @@ unique_name_in_owner = true
 zoom = Vector2(0.33, 0.33)
 script = ExtResource("2_7mycd")
 
+[node name="TextureRect" type="TextureRect" parent="MainCamera" unique_id=877621778]
+z_index = -1
+offset_left = -81268.0
+offset_top = -57157.008
+offset_right = -75844.0
+offset_bottom = -53330.008
+scale = Vector2(30.687784, 30.708979)
+texture = ExtResource("4_1bvp3")
+stretch_mode = 1
+
 [node name="ball1" parent="." unique_id=1798009355 instance=ExtResource("1_3vijo")]
 unique_name_in_owner = true
 position = Vector2(243.99995, -292.99997)
@@ -1514,16 +1524,6 @@ fade_in_secs = 1.5
 position = Vector2(20843.002, 3855.001)
 rotation = 0.65286267
 shape = SubResource("RectangleShape2D_ruth0")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=877621778]
-z_index = -1
-offset_left = -81268.0
-offset_top = -57157.008
-offset_right = -75844.0
-offset_bottom = -53330.008
-scale = Vector2(30.687784, 30.708979)
-texture = ExtResource("4_1bvp3")
-stretch_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1169827972]
 
